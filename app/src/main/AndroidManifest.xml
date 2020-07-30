@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.anish.branchdemo">
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <intent-filter>
+                <data android:scheme="testdeeplink" android:host="open"></data>
+                <action android:name="android.intent.action.VIEW"></action>
+                <category android:name="android.intent.category.DEFAULT"></category>
+                <category android:name="android.intent.category.BROWSABLE"></category>
+            </intent-filter>
+
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="https" android:host="0ngl4.app.link" />
+                <data android:scheme="https" android:host="0ngl4-alternate.app.link" />
+            </intent-filter>
+
+        </activity>
+        <meta-data android:name="io.branch.sdk.BranchKey" android:value="key_live_liG4DscVV1C2F8we6ZVZKncfArp2mngW"></meta-data>
+        <meta-data android:name="io.branch.sdk.BranchKey.test" android:value="key_test_cbH4zDeHP1qWqWynW0Q9OdfhrtcZbjxi" />
+        <meta-data android:name="io.branch.sdk.TestMode" android:value="false" />
+    </application>
+
+</manifest>
